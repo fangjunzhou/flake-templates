@@ -1,5 +1,5 @@
 {
-  description = "CS 536 Project 1";
+  description = "CS 536 Project";
 
   inputs =
     {
