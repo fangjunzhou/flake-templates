@@ -14,14 +14,13 @@
     {
       devShells.${system}.default = pkgs.mkShell
         {
-          nativeBuildInputs = with pkgs; [
-            jdt-language-server
-          ];
+          # Java environment and LSP.
           buildInputs = with pkgs; [
+            jdt-language-server
             jdk21
           ];
           shellHook = ''
-            echo "CS 536 Project 1 Shell Init"
+            echo "CS 536 Development Environment Shell Init"
           '';
         };
     };
