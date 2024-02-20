@@ -4,24 +4,30 @@
   inputs =
     {
       nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+      flake-utils.url = "github:numtide/flake-utils";
     };
 
-  outputs = { self, nixpkgs }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-    in
-    {
-      devShells.${system}.default = pkgs.mkShell
+  outputs = { self, nixpkgs, flake-utils }:
+    with flake-utils.lib;
+    eachSystem [
+      system.x86_64-linux
+      system.x86_64-darwin
+    ]
+      (system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
         {
-          # Java environment and LSP.
-          buildInputs = with pkgs; [
-            jdt-language-server
-            jdk21
-          ];
-          shellHook = ''
-            echo "CS 536 Development Environment Shell Init"
-          '';
-        };
-    };
+          devShells.default = pkgs.mkShell
+            {
+              buildInputs = with pkgs; [
+                # Java environment.
+                jdk
+              ];
+              shellHook = ''
+                echo "CS 536 Development Environment Shell Init"
+              '';
+            };
+        }
+      );
 }
