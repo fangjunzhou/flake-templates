@@ -24,9 +24,6 @@
                 # Java environment.
                 jdk
               ];
-              shellHook = ''
-                echo "CS 536 Development Environment Shell Init"
-              '';
             };
         }
       );
