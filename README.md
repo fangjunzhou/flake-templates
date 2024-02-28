@@ -3,7 +3,7 @@
 ## Use the Template
 
 ```sh
-nix flake init --template github:fangjunzhou/flake-templates\#<template>
+nix flake init --template github:fangjunzhou/flake-templates#<template>
 ```
 
 Where `<template>` can be:
