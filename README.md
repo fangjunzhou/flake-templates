@@ -10,4 +10,8 @@ Where `<template>` can be:
 
 ### `cs536`
 
-UW-Madison CS 536 Inroduction to PLs and Compilers development environment flake.
+UW-Madison CS 536 Introduction to PLs and Compilers development environment flake.
+
+### `cpp`
+
+C++ project flake.
