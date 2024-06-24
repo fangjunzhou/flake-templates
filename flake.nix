@@ -11,6 +11,10 @@
         path = ./cpp;
         description = "C++ project flake.";
       };
+      rust = {
+        path = ./rust;
+        description = "Rust project flake.";
+      };
     };
   };
 }
