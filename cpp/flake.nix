@@ -12,6 +12,7 @@
     eachSystem [
       system.x86_64-linux
       system.x86_64-darwin
+      system.aarch64-darwin
     ]
       (system:
         let
@@ -23,6 +24,8 @@
               buildInputs = with pkgs; [
                 # C++ development tools.
                 cmake
+                # Logging
+                spdlog
               ];
             };
         }
