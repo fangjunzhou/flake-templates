@@ -15,6 +15,10 @@
         path = ./rust;
         description = "Rust project flake.";
       };
+      python = {
+        path = ./python;
+        description = "Python project flake.";
+      };
     };
   };
 }
