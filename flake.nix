@@ -19,6 +19,10 @@
         path = ./python;
         description = "Python project flake.";
       };
+      nodejs = {
+        path = ./nodejs;
+        description = "NodeJS project flake.";
+      };
     };
   };
 }

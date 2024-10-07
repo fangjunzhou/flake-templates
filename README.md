@@ -16,6 +16,14 @@ UW-Madison CS 536 Introduction to PLs and Compilers development environment flak
 
 C++ project flake.
 
+### `python`
+
+Python project flake.
+
+### `nodejs`
+
+NodeJS project flake.
+
 ### `rust`
 
 Rust project flake.
