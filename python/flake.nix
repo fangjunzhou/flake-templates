@@ -24,6 +24,7 @@
               buildInputs = with pkgs; [
                 # Python environment.
                 python3
+                uv
               ];
             };
         }
