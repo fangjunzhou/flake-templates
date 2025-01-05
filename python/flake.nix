@@ -33,6 +33,8 @@
                   source .venv/bin/activate
                   # Add .venv/bin to PATH
                   export PATH=$PWD/.venv/bin:$PATH
+                else
+                  echo "Environment not initialized."
                 fi
               '';
             };
