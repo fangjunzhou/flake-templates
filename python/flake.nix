@@ -16,7 +16,10 @@
     ]
       (system:
         let
+          inherit (nixpkgs) lib;
           pkgs = import nixpkgs { inherit system; };
+          pythonLdPath = lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1;
+
         in
         {
           devShells.default = pkgs.mkShell
@@ -33,6 +36,7 @@
                   source .venv/bin/activate
                   # Add .venv/bin to PATH
                   export PATH=$PWD/.venv/bin:$PATH
+                  export LD_LIBRARY_PATH=${pythonLdPath}:$LD_LIBRARY_PATH
                 else
                   echo "Environment not initialized."
                 fi
